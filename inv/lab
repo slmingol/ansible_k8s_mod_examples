@@ -1,0 +1,6 @@
+[all]
+ocp-master-01a.lab1.bandwidthclec.local
+
+[all:vars]
+openshift_api="https://master.lab1.ocp.bandwidth.com:8443"
+

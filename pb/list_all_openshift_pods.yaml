@@ -1,0 +1,16 @@
+- name: Example showing interction w/ openshift API
+  hosts: all
+  tasks:
+
+  - name: Get a list of all pods from any namespace
+    k8s_facts:
+        api_key: "{{ oc_token }}"
+        host: "{{ openshift_api }}"
+        api_version: v1
+        kind: Pod
+        verify_ssl: false
+    register: pod_list
+    delegate_to: 127.0.0.1
+
+  - debug:
+      msg="{{ pod_list }}"
